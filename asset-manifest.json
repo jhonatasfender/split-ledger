@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/split-ledger/static/js/main.f8871f49.js",
+    "static/js/787.83ae79ba.chunk.js": "/split-ledger/static/js/787.83ae79ba.chunk.js",
+    "index.html": "/split-ledger/index.html",
+    "main.f8871f49.js.map": "/split-ledger/static/js/main.f8871f49.js.map",
+    "787.83ae79ba.chunk.js.map": "/split-ledger/static/js/787.83ae79ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f8871f49.js"
+  ]
+}
