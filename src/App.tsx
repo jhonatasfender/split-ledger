@@ -1,7 +1,8 @@
-import { ChangeEvent, useState } from 'react'
 import { styled } from 'styled-components'
 
+import useSplitText from './hooks/use-split-text'
 import GlobalStyles from './styles/global'
+import Header from './components/Header'
 
 const Container = styled.div`
   display: flex;
@@ -62,47 +63,19 @@ const Button = styled.button`
 `
 
 function App() {
-  const [inputText, setInputText] = useState('')
-  const [outputText, setOutputText] = useState('')
-
-  const generateOutputText = (inputLines: string[]) => {
-    const h010Records: string[] = []
-    const h020Records: string[] = []
-
-    for (const line of inputLines) {
-      if (line.startsWith('|H010|')) {
-        h010Records.push(line)
-      } else if (line.startsWith('|H020|')) {
-        h020Records.push(line)
-      }
-    }
-
-    const h010_h020Records = h010Records.flatMap((h010Line, index) => [
-      h010Line,
-      h020Records[index] || '',
-    ])
-
-    return [
-      ...inputLines.slice(0, 3),
-      ...h010_h020Records,
-      ...inputLines.slice(-1),
-    ].join('\n')
-  }
-
-  const handleGenerate = () => {
-    const lines = inputText.split('\n').filter(Boolean)
-    const newOutputText = generateOutputText(lines)
-    console.log(newOutputText)
-    setOutputText(newOutputText)
-  }
-
-  const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setInputText(e.target.value)
-  }
+  const {
+    handleGenerate,
+    inputText,
+    handleInputChange,
+    outputText,
+  } = useSplitText()
 
   return (
     <>
       <GlobalStyles />
+
+      <Header />
+
       <Container>
         <Button onClick={handleGenerate}>Generate</Button>
         <TextArea value={inputText} onChange={handleInputChange} />

@@ -1,6 +1,8 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
+  @import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap");
+
   * {
     margin: 0;
     padding: 0;
@@ -33,6 +35,6 @@ const GlobalStyles = createGlobalStyle`
   body {
     background-color: #778DA9;
   }
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles
