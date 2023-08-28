@@ -72,7 +72,7 @@ const Description = styled.p`
   }
 `
 
-const Title = styled.h2`
+const Title = styled.h1`
   text-transform: uppercase;
   font-weight: 200;
   letter-spacing: 2px;
